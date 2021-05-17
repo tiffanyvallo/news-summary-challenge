@@ -9,9 +9,9 @@ async function getHeadlines() {
   const guardianApi = 'https://content.guardianapis.com/search?section=news&order-by=newest&show-fields=all&api-key=test'
   const makersApi = 'http://news-summary-api.herokuapp.com/guardian?apiRequestUrl='
   const newsApi = makersApi + guardianApi
- // const headlinesData =  guardianApi + api_key;
+ // makers API doesn't work for me, so I was using the guardian api with my own api key, i've added the test one here for now
 
-  let guardianFetch = await fetch(newsApi)
+  let guardianFetch = await fetch(guardianApi)
   let guardianResults = await guardianFetch.json()
   let guardianHeadlines = await guardianResults
   // console.log(guardianHeadlines)
